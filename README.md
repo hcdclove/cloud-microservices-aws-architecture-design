@@ -6,7 +6,7 @@ The goal is to let the System Architecture design abosrve the complexity of the 
 
 When the user successfully verify the OTS challenges, the user detail is stored in a dynamoDB table and the user is added to Cognito user pool.
 
-I am using amplify for simplicity!  Also amplify handles the token life extention porcess in the background.  One less thing to have to code or worry about.
+I am using amplify for simplicity!  Also amplify handles the token life extention process in the background.  One less thing to have to code or worry about.
 
 Using an S3 bucket for the web app is very cheap. while cloudfront handles the incoming traffic from the users.
 
