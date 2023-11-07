@@ -1,6 +1,6 @@
 ECOMMERCE CLOUD MICROCROSERVICES ARCHITECTURE DESIGN
 
-![Alt text](image.png)
+![Alt text](image-1.png)
 
 The goal is to let the System Architecture design abosrve the complexity of the system while keeping the code simple, always observice the single responsibility pattern.
 
@@ -17,3 +17,15 @@ Activating Cloudfront chaching rules allows the app to be served from the chache
 In this deaign, I use several architecture patterns such as Orchestration, Choreograph, and CQRS + Materialize view.
 
 Note: There are still  several additional critical global services to be added as part of the overall software design architecture for this system, such as loggin, monitoring, security, etc.
+
+
+LAMBDA AUTHORIZER DESIGN
+![Alt text](image.png)
+
+A new layer to check the authenticity of the access request by a user is verified by the lambda authorizer function.
+
+The function receives a token with the Access policy on the header from the login web page.  This token is then verified for authenticity with the Cognito managed-service to insure that the user is a member of the access poolm the the access policy id further verified to insure that the user has access to the back sytem through the correct API end-point.
+
+A proper message is sent via the SNS managed service to the user in the event the user has not the right access policy.
+
+The Access policy of the user is attached to the header and passed to the lambda function.  
