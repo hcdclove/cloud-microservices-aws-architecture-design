@@ -20,7 +20,8 @@ Note: There are still  several additional critical global services to be added a
 
 
 LAMBDA AUTHORIZER DESIGN
-![Alt text](image.png)
+
+![Alt text](image-2.png)
 
 A new layer to check the authenticity of the access request by a user is verified by the lambda authorizer function.
 
