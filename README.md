@@ -2,17 +2,16 @@ ECOMMERCE CLOUD MICROCROSERVICES ARCHITECTURE DESIGN
 
 ![Alt text](image.png)
 
-The goal is to let the System Architecture design abosrve the complexity of the system while keeping the code simple, always observice the single responsibility pattern.
 
-When the user successfully verify the OTS challenges, the user detail is stored in a dynamoDB table and the user is added to Cognito user pool.
+When the user successfully verifies the OTP challenges, the user´s detail is stored in a dynamoDB table then, the user is added to the Cognito user pool.
 
-I am using amplify for simplicity!  Also amplify handles the token life extention process in the background.  One less thing to have to code or worry about.
+AWS Amplify managed service handles the tokens life-extentions in the background which is one less thing to have to code or worry about.
 
-Using an S3 bucket for the web app is very cheap. while cloudfront handles the incoming traffic from the users.
+Using an AWS S3-bucket for the web-app is very cheap. while cloudfront handles all incoming user traffic.
 
 Using a WAF also allows us to control all incoming requests from users into the system.
 
-Activating Cloudfront chaching rules allows the app to be served from the chache on subsequest requests rather that having to go through the steps all over again.
+Activating Cloudfront chaching allows the app to be served from the chache on subsequest requests rather that having to go through all the steps all over again.  This not only reduces  latency but also saves on cost as AWS charges for execution time.
 
 In this deaign, I use several architecture patterns such as Orchestration, Choreograph, Citcuit Breaker, and CQRS + Materialize view.
 
